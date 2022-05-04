@@ -2,7 +2,7 @@
 namespace xbphp;
 
 //框架根目录
-define('CORE_PATH') or define('CORE_PATH', __DIR__);
+@define('CORE_PATH') or define('CORE_PATH', __DIR__);
 
 /**
  * 我们的框架核心类Xbphp
@@ -85,7 +85,7 @@ class Xbphp{
 
         // $dispatch保存控制器实例化后的对象，我们就可以调用它的方法，
         // 也可以像方法中传入参数，以下等同于：$dispatch->$actionName($param)
-        call_user_func_array(array($dispatch, $actionName), $param);
+        @call_user_func_array(array($dispatch, $actionName), $param);
     }
 
     //检测开发环境
@@ -111,7 +111,7 @@ class Xbphp{
     // 检测下面四个数组中的敏感字符并删除
     public function removeMagicQuotes()
     {
-        if (get_magic_quotes_gpc()) {
+        if (@get_magic_quotes_gpc()) {
             $_GET = isset($_GET) ? $this->stripSlashesDeep($_GET ) : '';
             $_POST = isset($_POST) ? $this->stripSlashesDeep($_POST ) : '';
             $_COOKIE = isset($_COOKIE) ? $this->stripSlashesDeep($_COOKIE) : '';
