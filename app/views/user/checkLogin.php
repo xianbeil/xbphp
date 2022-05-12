@@ -1,0 +1,1 @@
+<a class="big" href="/user/index">成功登录,点击返回首页<?php $_SESSION['isLogin'] = 1; ?></a>

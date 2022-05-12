@@ -12,5 +12,7 @@ require(APP_PATH . 'xbphp/Xbphp.php');
 // 加载配置文件
 $config = require(APP_PATH . 'config/config.php');
 
+session_start();
+
 // 实例化框架类
 (new xbphp\Xbphp($config))->run();

@@ -1,0 +1,1 @@
+<a class="big" href="/user/index">成功注销,点击返回首页<?php $_SESSION['isLogin'] = 0; ?></a>
